@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TodoList</title>
     <link href="./main.css" rel="stylesheet" />
     <style>
 	    body {
@@ -147,7 +147,6 @@ footer a{
       <h2>已经完成 <span id="donecount">0</span></h2>
       <ul id="donelist"></ul>
     </section>
-    <footer>Copyright © 2014 todolist.cn <a href="#">clear</a></footer>
     <!-- <li draggable="true">
         <input type="checkbox" onchange="update(0,&quot;done&quot;,true)">
         <p id="p-0" onclick="edit(0)">asda</p>
@@ -168,7 +167,7 @@ footer a{
         donecount = document.querySelector("#donecount");
         // 输入文本内容后，敲回车
         document.addEventListener("keyup", keyHandler);
-        //修改在那个列表中
+        //修改在那个列表中,addEventListener可以向一个元素添加多次事件或者多次不同事件，后面的事件是不会覆盖前面的
         todolist.addEventListener("change", changeHandler);
         //删除元素
         todolist.addEventListener("click", clickHandler);
@@ -189,6 +188,7 @@ footer a{
         }
       }
 
+      //keyHandler函数:将输入框中的内容放入todolist中
       function keyHandler(e) {
         // title.value.trim().length===0 输入框内容为空
         // 如果按下的键不是Enter，或者输入框内容为空时，跳出
@@ -201,7 +201,7 @@ footer a{
         render();
       }
 
-      // 失焦
+      // 失焦,失去焦点，光标有不会在那里了，不能够输入内容了
       function blurHandler(e) {
         
         var index = Array.from(todolist.children).indexOf(
