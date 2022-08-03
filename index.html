@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TodoList</title>
+    <title>Document</title>
     <link href="./main.css" rel="stylesheet" />
-    <style>
-	    body {
+body {
 	margin:0;
 	padding:0;
 	font-size:16px;
@@ -130,7 +129,9 @@ footer a{
 }
 @media screen and (max-device-width: 620px) {section{width:96%;padding:0 2%;}}
 @media screen and (min-width: 620px) {section{width:600px;padding:0 10px;}}
-	  </style>
+————————————————
+版权声明：本文为CSDN博主「nqq0921」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/nqq0921/article/details/109481770
   </head>
   <body>
     <header>
@@ -147,11 +148,12 @@ footer a{
       <h2>已经完成 <span id="donecount">0</span></h2>
       <ul id="donelist"></ul>
     </section>
-    //<!-- <li draggable="true">
-        //<input type="checkbox" onchange="update(0,&quot;done&quot;,true)">
-        //<p id="p-0" onclick="edit(0)">asda</p>
-        //<a href="javascript:remove(0)">-</a>
-    //</li> -->
+    <footer>Copyright © 2014 todolist.cn <a href="#">clear</a></footer>
+    <!-- <li draggable="true">
+        <input type="checkbox" onchange="update(0,&quot;done&quot;,true)">
+        <p id="p-0" onclick="edit(0)">asda</p>
+        <a href="javascript:remove(0)">-</a>
+    </li> -->
     <script>
       var title, todolist, donelist, todocount, donecount,prev;
       var list = {
@@ -166,8 +168,8 @@ footer a{
         todocount = document.querySelector("#todocount");
         donecount = document.querySelector("#donecount");
         // 输入文本内容后，敲回车
-        //document.addEventListener("keyup", keyHandler);
-        //修改在那个列表中,addEventListener可以向一个元素添加多次事件或者多次不同事件，后面的事件是不会覆盖前面的
+        document.addEventListener("keyup", keyHandler);
+        //修改在那个列表中
         todolist.addEventListener("change", changeHandler);
         //删除元素
         todolist.addEventListener("click", clickHandler);
@@ -188,7 +190,6 @@ footer a{
         }
       }
 
-      //keyHandler函数:将输入框中的内容放入todolist中
       function keyHandler(e) {
         // title.value.trim().length===0 输入框内容为空
         // 如果按下的键不是Enter，或者输入框内容为空时，跳出
@@ -201,7 +202,7 @@ footer a{
         render();
       }
 
-      // 失焦,失去焦点，光标有不会在那里了，不能够输入内容了
+      // 失焦
       function blurHandler(e) {
         
         var index = Array.from(todolist.children).indexOf(
@@ -299,4 +300,6 @@ footer a{
     </script>
   </body>
 </html>
-
+————————————————
+版权声明：本文为CSDN博主「nqq0921」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/nqq0921/article/details/109481770
