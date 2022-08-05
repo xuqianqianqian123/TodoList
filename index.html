@@ -121,7 +121,7 @@
             </style>
         </head>
 
-        
+
         <body>
             <header>
                 <section>
@@ -252,13 +252,14 @@
                           prop === "donelist" ? "checked" : "" //donelist为已勾选,todolist为未勾选
                         }>
                         <p>${item}<input type="text" style="display:none"></p>
-                        <a href="javascript:void(0)">-</a> //a中是超链接,此时表示死链接,不会进行跳转 
+                        <a href="javascript:void(0)">-</a>  
                      </li>
                     `
             ); //return的括号
           }, ""); //reduce的括号
         } //for的括号
           //?将li遍历存到ol和ul里面,innerHTML:获取HTML当前标签的起始和结束里面的内容
+          //a中是超链接,此时表示死链接,不会进行跳转
         todocount.textContent = list.todolist.length;
         donecount.textContent = list.donelist.length;
                 } //函数的括号
