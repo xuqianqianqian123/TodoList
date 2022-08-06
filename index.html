@@ -137,7 +137,7 @@
                 <h2>已经完成 <span id="donecount">0</span></h2>
                 <ul id="donelist"></ul>
             </section>
-            <script>
+            <script>3
                 var title,todolist,donelist,donelist,prev;
                 var list ={
                     todolist: [],
@@ -155,7 +155,7 @@
                     document.addEventListener("keyup",keyHandler);
                     //修改todo
                     todolist.addEventListener("change",changeHandler);
-                    //删除
+                    //删除todolist
                     todolist.addEventListener("click",clickHandler);
                     //修改
                     todolist,addEventListener("dblclick",dblclickHandler);
@@ -163,6 +163,8 @@
                     todolist.addEventListener("focusout",blurHandler);
                     //修改done
                     donelist.addEventListener("change",changeHandler);
+                    //删除donelist
+                    donelist.addEventListener("click",clickHandler);
 
                     //初始化渲染,本地储存,下次仍可访问之前数据
                     if(localStorage.list){
