@@ -123,7 +123,11 @@
                         background-color: #e9e9eb;
                     }
                     .ios-switch{
-                        position: relative;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 99999;
+                        outline: none;
                         appearance: none;
                         cursor: pointer;
                         transition: all 100ms;
@@ -154,9 +158,9 @@
                             &::after{
                                 transform: translateX(40px);
                                 }
-                                & + .main{
-                                    filter: invert(1) hue-rotate(180deg);
-                                }
+                            & + .main{
+                                filter: invert(1) hue-rotate(180deg);
+                            }
                             }
                         }
                         .main{
