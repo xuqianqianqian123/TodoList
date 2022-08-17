@@ -8,7 +8,6 @@
                         margin:0;
                         padding:0;
                         font-size:16px;
-                        //background: #CDCDCD;
                     }
                     header {
                         height:50px;
@@ -124,6 +123,8 @@
 
         <body>
             <header>
+                <button id="modeBtn">切换深色</button>
+                <h1>主题切换</h1>
                 <section>
                     <div id="form">
                         <label for="title">TodoList</label>
@@ -146,6 +147,21 @@
                     donelist: []
                 };
                 init();
+
+                const btn = document.getElementById('modeBtn');
+                btn.addEventListener('click', (e) => {
+                    const body = document.body;
+                    if(e.target.innerHTML === '切换深色'){
+                        body.style.backgroundColor = 'black';
+                        body.style.color = 'white';
+                        e.target.innerHTML = '切换浅色';
+                    }
+                    else{
+                        body.style.backgroundColor = 'white';
+                        body.style.color = 'black';
+                        e.target.innerHTML = '切换深色';
+                    }
+                })
 
                 function init() {
                     //获取整个页面匹配的元素
