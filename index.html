@@ -148,6 +148,7 @@
                 };
                 init();
 
+                //切换深浅
                 const btn = document.getElementById('modeBtn');
                 btn.addEventListener('click', (e) => {
                     const body = document.body;
@@ -162,6 +163,14 @@
                         e.target.innerHTML = '切换深色';
                     }
                 })
+
+                //清空已完成
+                function emptytodo(){
+                    donelist = document.querySelector("#donelist");
+                    for(var i = 0 , len = list.donelist.length ; i<len ; i++){
+                        list.donelist[i] = "" ;
+                    }
+                }
 
                 function init() {
                     //获取整个页面匹配的元素
