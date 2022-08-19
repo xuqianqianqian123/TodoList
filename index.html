@@ -166,10 +166,7 @@
 
                 //清空已完成
                 function emptytodo(){
-                    donelist = document.querySelector("#donelist");
-                    for(var i = 0 , len = list.donelist.length ; i<len ; i++){
-                        list.donelist[i] = "" ;
-                    }
+                    var delete = arr.splice(0 , list.donelist.length);
                 }
 
                 function init() {
@@ -252,7 +249,7 @@
                     //如果remove没有值,就删除并添加给另一个列表(从todolist添加到donelist或从donelist添加到todolist)
                     //如果remove有值,就只删除不添加
                     var index = arr.indexOf(elem.textContent);
-                    var del = arr.splice(index , 1); //splice函数从下表为index的开始删除一个元素，并返回该元素单独组成的数组
+                    var del = arr.splice(index , 1); //splice函数从下标为index的开始删除一个元素，并返回该元素单独组成的数组
                     if(remove === undefined)
                     arr1.push(del[0]); //如果没有删除该元素，则把它放入另一个列表(todolist/donelist)中
                     render();
