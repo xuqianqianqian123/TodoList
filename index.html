@@ -164,10 +164,6 @@
                     }
                 })
 
-                //清空已完成
-                function emptytodo(){
-                    
-                }
 
                 function init() {
                     //获取整个页面匹配的元素
@@ -178,11 +174,11 @@
                     donecount = document.querySelector("#donecount");
                     //输入文本内容后，回车
                     document.addEventListener("keyup",keyHandler);
-                    //修改todo
+                    //转化列表
                     todolist.addEventListener("change",changeHandler);
                     //删除todolist
                     todolist.addEventListener("click",clickHandler);
-                    //修改
+                    //修改todo
                     todolist,addEventListener("dblclick",dblclickHandler);
                     //input失焦处理
                     todolist.addEventListener("focusout",blurHandler);
@@ -190,12 +186,23 @@
                     donelist.addEventListener("change",changeHandler);
                     //删除donelist
                     donelist.addEventListener("click",clickHandler);
+                    //清空donelist
+                    donelist,addEventListener("click",emptyHandler);
 
                     //初始化渲染,本地储存,下次仍可访问之前数据
                     if(localStorage.list){
                         list = JSON.parse(localStorage.list); //转化为json对象
                         render();
                     }
+                }
+
+                //清空已完成
+                function emptyHandler(e){
+                    if(e.target.nodeName !== "BUTTON")
+                    return ; 
+                    for(var i = 0 ; i<list.donelist.length ; i++)
+                    ;
+                    var de = list.donelist.splice(0 , i);
                 }
                 
                 function keyHandler(e){
