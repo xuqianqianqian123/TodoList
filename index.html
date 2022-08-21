@@ -204,10 +204,12 @@
                     if(e.target.nodeName !== "BUTTON")
                     return ;
                     if(e.target.innerHTML === '隐藏todo'){
-                        
+                        list.todolist.style.visibility = 'hidden' ;
+                        e.target.innerHTML = '显示todo' ;
                     }
                     else{
-
+                        list.todolist.style.visibility = ' ' ;
+                        e.target.innerHTML = '隐藏todo' ;
                     }
                 }
 
