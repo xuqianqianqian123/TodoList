@@ -134,7 +134,7 @@
 
             <section>
                 <h2>正在进行 <span id="todocount">0</span></h2>
-                <button type="button" onclick="play()">隐藏todo</button>
+                <button id="displayBtn">隐藏todo</button>
                 <ol id="todolist" class="demo-box"></ol>
                 <h2>已经完成 <span id="donecount">0</span></h2>
                 <button type="button" onclick="emptytodo()">清空done</button>
@@ -148,6 +148,20 @@
                     donelist: []
                 };
                 init();
+
+                //隐藏和显示todo
+                const Btn = document.getElementById('displayBtn');
+                btn.addEventListener('click' , (e) => {
+                    const todolist = document.list.todolist;
+                    if(e.target.innerHTML === '隐藏todo'){
+                        todolist.style.visibility = 'hidden' ;
+                        e.target.innerHTML = '显示todo' ;
+                    }
+                    else{
+                        todolist.style.visibility = ' ' ;
+                        e.target.innerHTML = '隐藏todo' ;
+                    }
+                })
 
                 //切换深浅
                 const btn = document.getElementById('modeBtn');
@@ -189,27 +203,11 @@
                     donelist.addEventListener("click",clickHandler);
                     //清空donelist
                     donelist,addEventListener("click",emptyHandler);
-                    //隐藏和显示todo
-                    todolist.addEventListener("click",playHandler);
 
                     //初始化渲染,本地储存,下次仍可访问之前数据
                     if(localStorage.list){
                         list = JSON.parse(localStorage.list); //转化为json对象
                         render();
-                    }
-                }
-
-                //隐藏和显示todo
-                function playHandler(e){
-                    if(e.target.nodeName !== "BUTTON")
-                    return ;
-                    if(e.target.innerHTML === '隐藏todo'){
-                        list.todolist.style.visibility = 'hidden' ;
-                        e.target.innerHTML = '显示todo' ;
-                    }
-                    else{
-                        list.todolist.style.visibility = ' ' ;
-                        e.target.innerHTML = '隐藏todo' ;
                     }
                 }
 
