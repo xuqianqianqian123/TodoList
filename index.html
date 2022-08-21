@@ -202,7 +202,7 @@
                     //删除donelist
                     donelist.addEventListener("click",clickHandler);
                     //清空donelist
-                    donelist.addEventListener("click",emptyHandler);
+                    //donelist.addEventListener("click",emptyHandler);
 
                     //初始化渲染,本地储存,下次仍可访问之前数据
                     if(localStorage.list){
@@ -212,14 +212,14 @@
                 }
 
                 //清空已完成
-                function emptyHandler(e){
-                    if(e.target.nodeName !== "BUTTON")
-                    return ; 
-                    for(var i = 0 ; i<list.donelist.length ; i++)
-                    ;
-                    var de = list.donelist.splice(0 , i);
-                    render() ;
-                }
+                //function emptyHandler(e){
+                    //if(e.target.nodeName !== "BUTTON")
+                    //return ; 
+                    //for(var i = 0 ; i<list.donelist.length ; i++)
+                    //;
+                    //var de = list.donelist.splice(0 , i);
+                    //render() ;
+                //}
                 
                 function keyHandler(e){
                     //如果不是按的Enter或输入框为空,跳出
