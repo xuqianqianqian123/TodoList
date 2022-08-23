@@ -134,7 +134,8 @@
 
             <section>
                 <h2>正在进行 <span id="todocount">0</span></h2>
-                <button id="displayBtn">隐藏todo</button>
+                <button id="Btn">隐藏todo</button>
+                //<button type="button" onclick="display()">显示todo</button>
                 <ol id="todolist" class="demo-box"></ol>
                 <h2>已经完成 <span id="donecount">0</span></h2>
                 <button type="button" onclick="emptytodo()">清空done</button>
@@ -149,6 +150,11 @@
                 };
                 init();
 
+                //隐藏todo
+                //function hide(){
+                    //list.todolist.style.visibility = 'hidden' ;
+                //}
+
                 //隐藏和显示todo
                 const Btn = document.getElementById('displayBtn');
                 btn.addEventListener('click' , (e) => {
@@ -156,10 +162,12 @@
                     if(e.target.innerHTML === '隐藏todo'){
                         todolist.style.visibility = 'hidden' ;
                         e.target.innerHTML = '显示todo' ;
+                        render() ;
                     }
                     else{
                         todolist.style.visibility = ' ' ;
                         e.target.innerHTML = '隐藏todo' ;
+                        render() ;
                     }
                 })
 
