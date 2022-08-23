@@ -134,7 +134,7 @@
 
             <section>
                 <h2>正在进行 <span id="todocount">0</span></h2>
-                //<button id="displayBtn">隐藏todo</button>
+                <button id="displayBtn">隐藏todo</button>
                 <ol id="todolist" class="demo-box"></ol>
                 <h2>已经完成 <span id="donecount">0</span></h2>
                 <button type="button" onclick="emptytodo()">清空done</button>
@@ -164,20 +164,20 @@
                 //})
 
                 //切换深浅
-                //const btn = document.getElementById('modeBtn');
-                //btn.addEventListener('click', (e) => {
-                    //const body = document.body;
-                    //if(e.target.innerHTML === '切换深色'){
-                        //body.style.backgroundColor = 'black';
-                        //body.style.color = 'white';
-                        //e.target.innerHTML = '切换浅色';
-                    //}
-                    //else{
-                        //body.style.backgroundColor = 'white';
-                        //body.style.color = 'black';
-                        //e.target.innerHTML = '切换深色';
-                    //}
-                //})
+                const btn = document.getElementById('modeBtn');
+                btn.addEventListener('click', (e) => {
+                    const body = document.body;
+                    if(e.target.innerHTML === '切换深色'){
+                        body.style.backgroundColor = 'black';
+                        body.style.color = 'white';
+                        e.target.innerHTML = '切换浅色';
+                    }
+                    else{
+                        body.style.backgroundColor = 'white';
+                        body.style.color = 'black';
+                        e.target.innerHTML = '切换深色';
+                    }
+                })
 
 
                 function init() {
